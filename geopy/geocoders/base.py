@@ -176,6 +176,7 @@ class Geocoder:
 
     def __init__(
             self,
+            *,
             scheme=None,
             timeout=DEFAULT_SENTINEL,
             proxies=DEFAULT_SENTINEL,
@@ -361,13 +362,13 @@ class Geocoder:
                          exc_info=True)
             return None
 
-    def geocode(self, query, exactly_one=True, timeout=DEFAULT_SENTINEL):
+    def geocode(self, query, *, exactly_one=True, timeout=DEFAULT_SENTINEL):
         """
         Implemented in subclasses.
         """
         raise NotImplementedError()
 
-    def reverse(self, query, exactly_one=True, timeout=DEFAULT_SENTINEL):
+    def reverse(self, query, *, exactly_one=True, timeout=DEFAULT_SENTINEL):
         """
         Implemented in subclasses.
         """
